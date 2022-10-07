@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import implementacoes.CandidatoImpl;
-import implementacoes.IsEvenImpl;
 import implementacoes.VotacaoImpl;
 import interfaces.VotacaoInterface;
 
