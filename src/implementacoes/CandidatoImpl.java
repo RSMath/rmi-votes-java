@@ -32,4 +32,8 @@ public class CandidatoImpl implements CandidatoInterface, Serializable {
 	public void setNumero(int numero) {
 		this.numero = numero;
 	}
+
+	public String getNameAndNumber() {
+		return String.format("%s (Número %d)", getNome(), getNumero());
+	}
 }

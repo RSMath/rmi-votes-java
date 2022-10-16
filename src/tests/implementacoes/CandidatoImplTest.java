@@ -24,4 +24,9 @@ public class CandidatoImplTest {
   public void testNewCandidatoNumber() {
     assertEquals(1, candidate.getNumero());
   }
+
+  @Test
+  public void testGetNameAndNumber() {
+    assertEquals("fulano (Número 1)", candidate.getNameAndNumber());
+  }
 }
