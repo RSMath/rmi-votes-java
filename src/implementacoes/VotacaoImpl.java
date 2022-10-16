@@ -45,6 +45,7 @@ public class VotacaoImpl extends UnicastRemoteObject implements VotacaoInterface
 
 	@Override
 	public void apuracao() {
+		// https://www.baeldung.com/java-stream-filter-lambda
 		this.votos.forEach(voto -> {
 			int count = (int) votos.stream().filter(
 				v -> v.getCandidato().equals(
@@ -52,16 +53,25 @@ public class VotacaoImpl extends UnicastRemoteObject implements VotacaoInterface
 				)
 			).count();
 
+			// { fulano (Número 1 ) = 1 }
+			// { beltrano (Número 3 ) = 3 }
 			quantidade.put(voto.getCandidato().getNameAndNumber(), count);
 		});
 
-		final String format = "O candidato %s possui %.2f%% dos votos";
 		final Set<String> chaves = quantidade.keySet();
 
 		System.out.println("Apuração dos votos");
 
+		// "O candidato fulano possui 25.00% dos votos"
+		// "O candidato beltrano possui 75.00% dos votos"
 		for (final String chave : chaves) {
-		    System.out.println(String.format(format, chave, voteAsPercentage(votos.size(), quantidade.get(chave))));
+			System.out.println(
+				String.format(
+					"O candidato %s possui %.2f%% dos votos", 
+					chave, 
+					voteAsPercentage(votos.size(), quantidade.get(chave))
+				)
+			);
 		}
 	}
 
@@ -72,9 +82,9 @@ public class VotacaoImpl extends UnicastRemoteObject implements VotacaoInterface
 				return -1;
 			}
 
-			for (int i = 0; i < this.candidatos.size(); i++) {
-				if (this.candidatos.get(i).getNumero() == Integer.parseInt(numero)) {
-					return this.salvarVoto(i);
+			for (int posicao = 0; posicao < this.candidatos.size(); posicao++) {
+				if (this.candidatos.get(posicao).getNumero() == Integer.parseInt(numero)) {
+					return posicao;
 				}
 			}
 

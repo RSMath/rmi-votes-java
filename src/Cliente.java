@@ -24,6 +24,7 @@ public class Cliente {
 		entrada.close();
 
 		int posicao = votacao.buscarCandidato(numero_candidato);
+		votacao.salvarVoto(posicao);
 		System.out.println("Seu voto foi: " + candidatos.get(posicao).getNome());
 		votacao.apuracao();
 	}
