@@ -8,7 +8,6 @@ import implementacoes.VotacaoImpl;
 import interfaces.VotacaoInterface;
 
 public class Servidor {
-
 	static List<CandidatoImpl> candidatos;
 	static VotacaoInterface votacaoImpl;
 	static int porta = 1099;
@@ -29,7 +28,7 @@ public class Servidor {
 
 			System.out.println("Aguardando Clientes na porta " + porta + "!");
 		} catch (Exception e) {
-				e.printStackTrace();
+      e.printStackTrace();
 		}
 	}
 }
