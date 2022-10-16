@@ -111,7 +111,7 @@ Então devemos compilar o servidor para produzirmos os arquivos ```.class```.
 ```
   // iremos compilar todos os arquivos .java dentro de interface, implementações junto com Cliente e Servidor.
  
-  javac javac -d bin/ -sourcepath src/ src/interfaces/*.java src/implementacoes/*.java src/Servidor.java src/Cliente.java
+ javac -d bin/ -sourcepath src/ src/interfaces/*.java src/implementacoes/*.java src/Servidor.java src/Cliente.jav
 
 ```
 
