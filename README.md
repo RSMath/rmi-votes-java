@@ -15,7 +15,7 @@ O modelo de RMI fornece uma aplicação de objetos distribuídos para o programa
 - Comunicação com objetos remotos: O desenvolvedor não tem de lidar com a comunicação entre os objetos remotos desde que este é tratado pelo sistema RMI.
 - Carregar os bytecodes de classe dos objetos que são transferidos como argumentos ou valores.
 
-Fonte:[DevMedia](https://www.devmedia.com.br/uma-introducao-ao-rmi-em-java/28681)
+Fonte: [DevMedia](https://www.devmedia.com.br/uma-introducao-ao-rmi-em-java/28681)
 
 # Descrição do que foi solicitado
 
@@ -122,5 +122,5 @@ Execute o programa Servidor:
 Em seguida, execute o Cliente(abra outro terminal e navegue até o path anterior):
 ```
 
-  cd bin/ && java Servidor
+  cd bin/ && java Cliente
 ```
