@@ -40,6 +40,8 @@ public class VotacaoImpl extends UnicastRemoteObject implements VotacaoInterface
 			);
 		}
 
+		apuracao();
+
 		return posicao;
 	}
 
@@ -67,8 +69,8 @@ public class VotacaoImpl extends UnicastRemoteObject implements VotacaoInterface
 		for (final String chave : chaves) {
 			System.out.println(
 				String.format(
-					"O candidato %s possui %.2f%% dos votos", 
-					chave, 
+					"O candidato %s possui %.2f%% dos votos",
+					chave,
 					voteAsPercentage(votos.size(), quantidade.get(chave))
 				)
 			);
