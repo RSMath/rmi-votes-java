@@ -12,7 +12,6 @@ public class Cliente {
 	public static void main(String[] args) throws Exception {
 		String objName = "rmi://localhost:" + porta + "/server";
 		VotacaoInterface votacao = (VotacaoInterface) Naming.lookup(objName);
-
 		List<CandidatoImpl> candidatos = votacao.listarCandidatos();
 
 		candidatos.forEach(x -> {

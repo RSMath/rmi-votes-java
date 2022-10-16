@@ -1,5 +1,4 @@
 import java.rmi.Naming;
-import java.rmi.Remote;
 import java.rmi.registry.LocateRegistry;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,13 +21,13 @@ public class Servidor {
 			LocateRegistry.createRegistry(porta);
 
 			candidatos = new ArrayList<>();
-			candidatos.add(new CandidatoImpl(1, "Fulano da Silva"));
-			candidatos.add(new CandidatoImpl(2, "Beltrano de Talaho"));
+			candidatos.add(new CandidatoImpl(11, "Fulano da Silva"));
+			candidatos.add(new CandidatoImpl(33, "Beltrano de Talaho"));
 			
 			votacaoImpl = new VotacaoImpl(candidatos);
 			
 			Naming.rebind(objName, votacaoImpl);
-			
+
 			System.out.println("Aguardando Clientes na porta " + porta + "!");
 		} catch (Exception e) {
 				e.printStackTrace();
