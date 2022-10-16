@@ -106,9 +106,11 @@ Então devemos acessar a pasta do projeto e cerfique-se que a versão do java é
                      // OpenJDK Runtime Environment (build 1.8.0_342-8u342-b07-0ubuntu1~20.04-b07)
                      // OpenJDK 64-Bit Server VM (build 25.342-b07, mixed mode)
 ```
-Então devemos compilar o servidor para produzirmos o arquivo ```.class```
+Então devemos compilar o servidor para produzirmos os arquivos ```.class```.
 
 ```
+  // iremos compilar todos os arquivos .java dentro de interface, implementações junto com Cliente e Servidor.
+ 
   javac javac -d bin/ -sourcepath src/ src/interfaces/*.java src/implementacoes/*.java src/Servidor.java src/Cliente.java
 
 ```
