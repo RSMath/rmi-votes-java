@@ -44,9 +44,17 @@ public class VotacaoImplTest {
   }
 
   @Test
-  public void shouldSearchCandidateAndReturnPosition() throws RemoteException {
+  public void shouldSearchAndReturnPositionCandidate1() throws RemoteException {
     assertEquals(0, voteImpl.buscarCandidato("11"));
+  }
+
+  @Test
+  public void shouldSearchAndReturnPositionCandidate2() throws RemoteException {
     assertEquals(1, voteImpl.buscarCandidato("33"));
-    assertEquals(-1, voteImpl.buscarCandidato("666"));
+  }
+
+  @Test
+  public void shouldSearchAndReturnMinusOneToNonExistentCandidate() throws RemoteException {
+    assertEquals(-1, voteImpl.buscarCandidato("1111"));
   }
 }
