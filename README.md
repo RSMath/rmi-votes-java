@@ -100,7 +100,7 @@ git clone https://github.com/MatheusADStudy/rmi-votes-java.git
 Então devemos acessar a pasta do projeto e cerfique-se que a versão do java é JDK 1.8 (jdk 8)
 
 ```
-  cd rmi-votes-java/
+  cd rmi-votes-java/ && mkdir bin
 
   java -version # => // openjdk version "1.8.0_342"
                      // OpenJDK Runtime Environment (build 1.8.0_342-8u342-b07-0ubuntu1~20.04-b07)
