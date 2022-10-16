@@ -15,7 +15,7 @@ O modelo de RMI fornece uma aplicação de objetos distribuídos para o programa
 - Comunicação com objetos remotos: O desenvolvedor não tem de lidar com a comunicação entre os objetos remotos desde que este é tratado pelo sistema RMI.
 - Carregar os bytecodes de classe dos objetos que são transferidos como argumentos ou valores.
 
-Fonte:[DevMedia](https://www.devmedia.com.br/uma-introducao-ao-rmi-em-java/28681)
+Fonte: [DevMedia](https://www.devmedia.com.br/uma-introducao-ao-rmi-em-java/28681)
 
 # Descrição do que foi solicitado
 
@@ -100,16 +100,18 @@ git clone https://github.com/MatheusADStudy/rmi-votes-java.git
 Então devemos acessar a pasta do projeto e cerfique-se que a versão do java é JDK 1.8 (jdk 8)
 
 ```
-  cd rmi-votes-java/
+  cd rmi-votes-java/ && mkdir bin
 
   java -version # => // openjdk version "1.8.0_342"
                      // OpenJDK Runtime Environment (build 1.8.0_342-8u342-b07-0ubuntu1~20.04-b07)
                      // OpenJDK 64-Bit Server VM (build 25.342-b07, mixed mode)
 ```
-Então devemos compilar o servidor para produzirmos o arquivo ```.class```
+Então devemos compilar o servidor para produzirmos os arquivos ```.class```.
 
 ```
-  javac javac -d bin/ -sourcepath src/ src/interfaces/*.java src/implementacoes/*.java src/Servidor.java src/Cliente.java
+  // iremos compilar todos os arquivos .java dentro de interface, implementações junto com Cliente e Servidor.
+ 
+ javac -d bin/ -sourcepath src/ src/interfaces/*.java src/implementacoes/*.java src/Servidor.java src/Cliente.jav
 
 ```
 
@@ -122,5 +124,5 @@ Execute o programa Servidor:
 Em seguida, execute o Cliente(abra outro terminal e navegue até o path anterior):
 ```
 
-  cd bin/ && java Servidor
+  cd bin/ && java Cliente
 ```
