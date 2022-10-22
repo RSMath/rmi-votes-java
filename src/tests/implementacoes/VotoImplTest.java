@@ -13,7 +13,6 @@ public class VotoImplTest {
   private VotoImpl vote1, vote2;
   private CandidatoImpl candidate1, candidate2;
 
-
   @Before
   public void setup() throws RemoteException {
     candidate1 = new CandidatoImpl(1, "fulano");
