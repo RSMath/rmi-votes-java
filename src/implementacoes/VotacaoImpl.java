@@ -1,5 +1,6 @@
 package implementacoes;
 
+import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.server.RemoteServer;
 import java.rmi.server.ServerNotActiveException;
@@ -11,10 +12,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import interfaces.ApuracaoInterface;
 import interfaces.VotacaoInterface;
 
 public class VotacaoImpl extends UnicastRemoteObject implements VotacaoInterface {
-
 	private static final long serialVersionUID = 1L;
 	private List<CandidatoImpl> candidatos;
 	private List<VotoImpl> votos = new ArrayList<>();
@@ -69,7 +70,7 @@ public class VotacaoImpl extends UnicastRemoteObject implements VotacaoInterface
 		for (final String chave : chaves) {
 			System.out.println(
 				String.format(
-					"O candidato %s possui %.2f%% dos votos",
+					"O candidato %s possui %s dos votos",
 					chave,
 					voteAsPercentage(votos.size(), quantidade.get(chave))
 				)
@@ -120,7 +121,16 @@ public class VotacaoImpl extends UnicastRemoteObject implements VotacaoInterface
 		return false;
 	}
 
-	private float voteAsPercentage(int totalVotes, int votesCandidate) {
-		return (float) ((votesCandidate * 100) / totalVotes);
+	public String voteAsPercentage(int total, int actual) {
+		String objName = "rmi://localhost:" + 1111 + "/server";
+		try {
+			ApuracaoInterface votacao = (ApuracaoInterface) Naming.lookup(objName);
+			return votacao.calcularVotos(total, actual);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return "error on calculating";
 	}
 }
