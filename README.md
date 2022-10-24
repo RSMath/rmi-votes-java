@@ -108,21 +108,27 @@ Então devemos acessar a pasta do projeto e cerfique-se que a versão do java é
 ```
 Então devemos compilar o servidor para produzirmos os arquivos ```.class```.
 
+## Compilando Arquivos
 ```
   // iremos compilar todos os arquivos .java dentro de interface, implementações junto com Cliente e Servidor.
+  // fazemos a compilação dessa forma pois caso executemos javac src/**/*.java ele irá assumir uma ordem que poderá causar problemas no momento do build
  
  javac -d bin/ -sourcepath src/ src/interfaces/*.java src/implementacoes/*.java src/Servidor.java src/Cliente.java src/ServidorApuracao.java
 
 ```
 
-Execute o programa Servidor:
+Execute o programa Servidor de Apuração:
 
+```
+  cd bin/ && java ServidorApuracao
+```
+
+Em seguida, execute o Servidor principal da aplicação (é nele que o cliente fará a invocação dos métodos | abra outro terminal e navegue até o path anterior):
 ```
   cd bin/ && java Servidor
 ```
 
 Em seguida, execute o Cliente(abra outro terminal e navegue até o path anterior):
 ```
-
   cd bin/ && java Cliente
 ```
